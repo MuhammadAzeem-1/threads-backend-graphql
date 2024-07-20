@@ -14,11 +14,15 @@ async function init() {
     expressMiddleware(await createApolloGraphqlServer(), {
       context: async ({ req }) => {
         const token = req.headers["token"];
-
+        
         try {
           const user = UserService.decodeJWTToken(token as string);
+          
+          
           return { user };
         } catch (error) {
+         
+          
           return {};
         }
       },
