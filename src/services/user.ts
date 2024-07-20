@@ -14,7 +14,7 @@ export interface GetUserTokenPayload {
   password: string;
 }
 
-const JWT_SECRET = "Azeem";
+const JWT_SECRET = "// env setup";
 
 class UserService {
   private static hashedPassword(password: string, Salt: string) {
